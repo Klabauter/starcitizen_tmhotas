@@ -1,0 +1,58 @@
+include "sc_usermap.tmh"
+
+define SC_CONTROL_DEBUG 0;
+
+char coupled;
+char joyx_mode;
+
+char set_yaw_default() {
+	// Turn joy_x to DX_ZROT_AXIS and use that to yaw instead of roll in SC
+	if (coupled == 1) {
+		DXSetAxis(DX_X_AXIS, 0);
+		MapAxis(&Joystick, JOYX, DX_ZROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	}
+	joyx_mode = 0;
+}
+
+char set_roll_default() {
+	// Return joy_x to DX_X_AXIS, Star Citizen's default
+	if (coupled == 1) {
+		DXSetAxis(DX_ZROT_AXIS, 0);
+		MapAxis(&Joystick, JOYX, DX_X_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+	}
+	joyx_mode = 1;
+}
+
+char toggle_coupled() {
+	// Set joyx default mode depending on coupled/uncoupled
+	ActKey(PULSE+KEYON+CAPS);
+
+	if (coupled) {		// decouple
+		if (joyx_mode == 0) {  // yaw
+			DXSetAxis(DX_ZROT_AXIS, 0);
+			MapAxis(&Joystick, JOYX, DX_X_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+		}
+		coupled = 0;
+	}
+	else {	// couple
+		if (joyx_mode == 0) { // yaw
+			DXSetAxis(DX_X_AXIS, 0);
+			MapAxis(&Joystick, JOYX, DX_ZROT_AXIS, AXIS_NORMAL, MAP_ABSOLUTE);
+		}
+		coupled = 1;
+	}
+}
+
+int StarCitizen_Init() {
+	coupled = 1;
+	if (SC_D_ROLL[SC_ROLL]) {
+		joyx_mode = set_roll_default();
+	} else {
+		joyx_mode = set_yaw_default();
+	}
+	// MapAxis(&Throttle, THR_LEFT, DX_ZROT_AXIS, AXIS_REVERSED, MAP_ABSOLUTE);
+	// SetSCurve(&Throttle, THR_LEFT, 0, 0, 0, 0, 0);
+	MapKey(&SC_D_COUPLE, SC_COUPLE, EXEC("toggle_coupled();"));
+	MapKey(&SC_D_ROLL, SC_ROLL, EXEC("set_roll_default();"));
+	MapKey(&SC_D_YAW, SC_YAW, EXEC("set_yaw_default();"));
+}

@@ -1,0 +1,11 @@
+// Please assign the buttons you want to use to toggle SC Controls here.
+// SC_D_<function>  is the device, either Joystick or Throttle.
+// SC_<function> is the Thrustmaster button you want used to activate
+// the function. 
+
+define SC_D_COUPLE Throttle
+define SC_COUPLE MSP			// Couple or Decouple flight mode
+define SC_D_ROLL Throttle
+define SC_ROLL EACOFF			// Switch primary flight mode to roll
+define SC_D_YAW Throttle
+define SC_YAW EACON             // Switch primary flight mode to yaw
