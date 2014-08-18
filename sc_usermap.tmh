@@ -3,8 +3,9 @@
 // SC_<function> is the Thrustmaster button you want used to activate
 // the function. 
 
-define SC_D_COUPLE Throttle
-define SC_COUPLE MSP			// Couple or Decouple flight mode
+define SC_D_DECOUPLE Throttle
+define SC_DECOUPLE SPDF		// Decouple button
+define SC_DECOUPLE_IS_TOGGLE 0	// 1 for toggle, 0 for press/release 
 define SC_D_ROLL Throttle
 define SC_ROLL EACOFF			// Switch primary flight mode to roll
 define SC_D_YAW Throttle
