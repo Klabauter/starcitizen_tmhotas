@@ -1,0 +1,140 @@
+<ActionMaps version="0" >
+	<actionmap name="spaceship_general">
+		<action name="v_power_cycle_preset_fwd">
+			<rebind device="joystick" input="js1_button12" />
+		</action>
+		<action name="v_power_cycle_preset_back">
+			<rebind device="joystick" input="js1_button14" />
+		</action>
+	</actionmap>
+
+
+	<actionmap name="spaceship_view">
+		<action name="v_view_zoom_in">
+			<rebind device="joystick" input="js1_hat1_up" />
+		</action>
+		<action name="v_view_zoom_out">
+			<rebind device="joystick" input="js1_hat1_down" />
+		</action>
+		<action name="v_view_mode">
+			<rebind device="joystick" input="js1_hat1_left" />
+		</action>
+		<action name="v_view_cycle_fwd">
+			<rebind device="joystick" input="js1_hat1_right" />
+		</action>
+		<action name="v_view_dynamic_focus_toggle">
+			<rebind device="joystick" input="js1_hat1_up" />
+		</action>
+	</actionmap>
+
+	<actionmap name="spaceship_movement">
+		<!-- Stick -->
+		<action name="v_pitch">
+			<rebind device="joystick" input="js1_y" />
+		</action>
+		<action name="v_decoupled_pitch">
+			<rebind device="joystick" input="js1_y" />
+		</action>
+		<action name="v_yaw">
+			<rebind device="joystick" input="js1_x" />
+		</action>
+		<action name="v_decoupled_yaw">
+			<rebind device="joystick" input="js1_x" />
+		</action>
+		
+		<!-- Throttle -->
+		<action name="v_throttle">
+			<rebind device="joystick" input="js1_throttlez" />
+		</action>
+		<action name="v_strafe_longitudinal">
+			<rebind device="joystick" input="js1_rotz" />
+		</action>
+		<action name="v_decoupled_strafe_longitudinal">
+			<rebind device="joystick" input="js1_rotz" />
+		</action>
+		<action name="v_strafe_vertical">
+			<rebind device="joystick" input="js1_slider2" />
+		</action>
+		<action name="v_decoupled_strafe_vertical">
+			<rebind device="joystick" input="js1_slider2" />
+		</action>
+
+		<!-- Rudder Pedals -->
+		<action name="v_roll">
+			<rebind device="joystick" input="js2_rotz" />
+		</action>
+		<action name="v_decoupled_roll">
+			<rebind device="joystick" input="js2_rotz" />
+		</action>
+		<action name="v_strafe_left">
+			<rebind device="joystick" input="" />
+		</action>
+		<action name="v_decoupled_strafe_left">
+			<rebind device="joystick" input="" />
+		</action>
+		<action name="v_strafe_right">
+			<rebind device="joystick" input="" />
+		</action>
+		<action name="v_decoupled_strafe_right">
+			<rebind device="joystick" input="" />
+		</action>
+
+		<!-- brake bound within TARGET config on rocker switch -->
+		<action name="v_neutonian_brake">
+			<rebind device="joystick" input="" />
+		</action>
+		<action name="v_brake">
+			<rebind device="joystick" input="" />
+		</action>
+		<!-- Afterburner set to 99-100% throttle -->
+		<action name="v_afterburner">
+			<rebind device="joystick" input="" />
+		</action>
+		<action name="v_target_match_vel">
+			<rebind device="joystick" input="js1_button32" />
+		</action>
+	</actionmap>
+
+	<actionmap name="spaceship_weapons">
+		<action name="v_attack1_group1">
+			<rebind device="joystick" input="js1_button1" />
+		</action>
+		<!-- Also in Thrustmaster script, map DX_6 to DX2 -->
+		<action name="v_attack1_group2">
+			<rebind device="joystick" input="js1_button2" />
+		</action>
+		<action name="v_attack1_group3">
+			<rebind device="joystick" input="js1_button5" />
+		</action>
+		<action name="v_attack1_group4">
+			<rebind device="joystick" input="js1_button4" />
+		</action>
+	</actionmap>
+
+	<actionmap name="spaceship_missiles">
+		<action name="v_weapon_launch_missile">
+			<rebind device="joystick" input="js1_button4" />
+		</action>
+		<action name="v_weapon_cycle_missile_fwd">
+			<rebind device="joystick" input="js1_button11" />
+		</action>
+	</actionmap>
+	<actionmap name="spaceship_defensive">
+		<action name="v_weapon_launch_countermeasure">
+			<rebind device="joystick" input="js1_button3" />
+		</action>
+	</actionmap>
+	<actionmap name="vehicle_driver" version="23">
+		<action name="v_move_longitudinal" onPress="1" onRelease="1" retriggerable="1" keyboard="w" xboxpad="xi_triggerr_btn" joystick="js1_y" />
+		<action name="v_yaw_left" onPress="1" onRelease="1" retriggerable="1" keyboard="a" />
+		<action name="v_yaw_right" onPress="1" onRelease="1" retriggerable="1" keyboard="d" />
+		<action name="v_move_forward" onPress="1" onRelease="1" retriggerable="1" keyboard="w" xboxpad="xi_triggerr_btn" ps3pad="pad_r2"/>
+		<action name="v_move_back" onPress="1" onRelease="1" retriggerable="1" keyboard="s" xboxpad="xi_triggerl_btn" ps3pad="pad_l2"/>
+		<action name="v_brake" onPress="1" onRelease="1" keyboard="space" xboxpad="xi_a" ps3pad="pad_cross" />
+		<action name="v_roll_left" onPress="1" onRelease="1" keyboard="q" />
+		<action name="v_roll_right" onPress="1" onRelease="1" keyboard="t" />
+		<action name="v_attack1" onPress="1" onRelease="1" onHold="1" keyboard="mouse1" xboxpad="xi_shoulderr" ps3pad="pad_r1"/>
+		<action name="v_attack2" onPress="1" onRelease="1" onHold="1" keyboard="mouse2" xboxpad="xi_shoulderl" ps3pad="pad_l1"/>
+		<action name="v_yaw" onPress="1" onRelease="1" xboxpad="xi_thumblx" ps3pad="pad_sticklx"/>
+	</actionmap>
+</ActionMaps>
